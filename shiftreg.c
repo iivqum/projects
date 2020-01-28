@@ -50,10 +50,7 @@ reg_byte reg_read(shiftreg *reg, reg_enum sig)
 		case OUT7: out |= reg->s&128; break;
 		case OUTS: out |= reg->s&128; break;
 	}
-	if(out){
-		return SIG_HI;
-	}
-	return SIG_LO;
+	return out?SIG_HI:SIG_LO;
 }
 
 int main()
