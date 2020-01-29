@@ -29,10 +29,16 @@ void reg_clock(shiftreg *reg, reg_enum sig)
 }
 
 /* clear storage register */
-void reg_reset(shiftreg *reg){reg->s &= 0;}
+void reg_reset(shiftreg *reg)
+{
+	reg->s &= 0;
+}
 
 /* copy storage register into output register */
-void reg_latch(shiftreg *reg){reg->o &= reg->s;}
+void reg_latch(shiftreg *reg)
+{
+	reg->o &= reg->s;
+}
 
 reg_byte reg_read(shiftreg *reg, reg_enum sig)
 {
